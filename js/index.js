@@ -21,14 +21,14 @@ copyright.innerHTML = "Bianca " + thisYear;
 
 footer.appendChild(copyright);
 
-const skills = ["video editing", "videogrpahy"];
-const skillsSection = document.querySelector("#skills");
-const skillsList = skillsSection.querySelector("ul");
+let skills = ["video editing", "videogrpahy"];
+let skillsSection = document.getElementById("skills");
+let skillsList = skillsSection.querySelector("ul");
 
 for (let i = 0; i < skills.length; i++) {
-    skill = document.createElement("li");
+    let skill = document.createElement("li");
     skill.innerText = skills[i];
-    skill.appendChild(skillsList);
+    skillsList.appendChild(skill);
 };
 
 
