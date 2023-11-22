@@ -13,10 +13,7 @@
 
 <body>
     <h1 id="headline"><b>Bianca Boykin's Page</b></h1>
-    <!-- creating a button -->
-    <p><label for="input-phrase">Test</label></p>
-    <p><input type="text" id="input-phrase"></p>
-    <p><button id="btn-phrase">Hi!</button></p>
+   
     <section>
         <h3>About</h3>
         <img src="Bianca Boykin Headshot.jpg" width="140" height="200">
@@ -47,6 +44,28 @@
             <li><a href="https://www.instagram.com/bionica13/?hl=en">Instagram: bionica13</a></li>
         </ul> </p>
     </section>
+
+    <section><h2>Leave a Message</h2>
+        <form name = "leave_message">
+            <label for = "usersName">Name</label>
+            <input type = "text" name = "usersName" required = true/>
+            <br></br>
+            <label for = "usersEmail">Email</label>
+            <input type = "email" name = "usersEmail" required = true/>
+            <br></br>
+            <label for = "usersMessage">Message</label>
+            <textarea name = "usersMessage" required = true></textarea>
+            <br></br>
+            <button type = "submit">Submit</button>
+        </form>
+    </section>
+    
+    <section id = "messages">
+        <h2>Messages</h2>
+            <ul></ul>
+        </section>
+
+
     <footer id="footer"> </footer>
     <script src="js/index.js"></script>
 </body>
