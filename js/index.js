@@ -1,18 +1,3 @@
-const button = document.querySelector("#btn-phrase");
-
-button.addEventListener("click", () => {
-    alert("Welcome to my page!");
-    headline.style.border = "solid 2px white";
-    headline.style.border = "60px";
-});
-    // testing also adding fun little pops when button clicks
-    // alternatives:
-        // function alertFunction() {
-            //alert("alert!");
-       // }
-       // btn.addEventListener("click", alertFunction)
-
-
 const today = new Date();
 const thisYear = today.getFullYear();
 const footer = document.querySelector("#footer");
@@ -21,7 +6,7 @@ copyright.innerHTML = "Bianca " + thisYear;
 
 footer.appendChild(copyright);
 
-let skills = ["video editing", "videogrpahy"];
+let skills = ["video editing", "videography"];
 let skillsSection = document.getElementById("skills");
 let skillsList = skillsSection.querySelector("ul");
 
@@ -30,6 +15,39 @@ for (let i = 0; i < skills.length; i++) {
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 };
+
+let messageForm = document.forms["leave_message"];
+messageForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let userName = event.target.usersName.value;
+    let userEmail = event.target.usersEmail.value;
+    let userMessage = event.target.usersMessage.value;
+
+    console.log("Name: " + userName);
+    console.log("Email: " + userEmail);
+    console.log("Message: " + userMessage);
+
+    let messageSection = document.getElementById("messages");
+    let messageList = messageSection.querySelector("ul");
+    let newMessage = document.createElement("li");
+
+    newMessage.innerHTML = 
+    `<a href='mailto:${userEmail}'>${userName} </a>` +
+    `<span> wrote: ${userMessage}</span>`;
+
+        let removeButton = document.createElement("button");
+        removeButton.innerText = "Remove";
+        removeButton.addEventListener("click", function() {
+            let entry = removeButton.parentNode;
+            entry.remove();
+        });
+
+        newMessage.appendChild(removeButton);
+        messageList.appendChild(newMessage);
+
+    messageForm.reset();
+});
 
 
 
