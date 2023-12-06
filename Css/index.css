@@ -1,0 +1,84 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    border: 2px solid white;
+    padding: 30px;
+    margin: 50px;
+}
+    
+h1 {
+    color: white;
+    font-size: 40px;
+    font-weight: lighter;
+}
+p {
+    color: white;
+}
+h2 {
+    color: white;
+    font-size: 25px;
+    font-weight: normal;
+}
+h3 {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+#skills ul {
+    display: list-item;
+    list-style-type: "📷";
+    padding-inline-start: 10px;
+}
+dd {
+    display: list-item;
+    list-style-type: "🎉";
+    padding-inline-start: 1ch;
+}
+pre {
+    color: white;
+}
+label {
+    color: white;
+}
+#About {
+    border-block-style: groove;
+    writing-mode: horizontal-tb;
+}
+#Experience {
+    border-block-style: dotted;
+}
+#skills {
+    border-block-style: groove;
+}
+Label {
+    font-size: 12px;
+    color: white;
+}
+Input {
+    font-size: 12px;
+    padding: 10px;
+    border: 2px solid bisque;
+}
+Textarea {
+    font-size: 12px;
+    padding: 10px;
+    border: 2px solid bisque;
+}
+Form {
+    padding: 10px;
+}
+#Submit {
+    padding: 7px;
+    background: grey;
+    border: bisque;
+}
+#messages ul {
+    display: list-item;
+    list-style-type: "💥";
+    padding-inline-start: 1ch;
+}
+Footer {
+    border-spacing: 6px;
+    background-color: darkslategray;
+}
