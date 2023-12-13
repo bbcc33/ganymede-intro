@@ -7,13 +7,22 @@
         <meta name="keywords" content="Bianca">
         <meta name="author" content="Bianca">
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0" alt="Me, Bianca">
-        <!-- Testing out writing comments, can I inspect this page and see my meta tags?-->
         <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/flexbox.css">
+        <script src="js/index.js"></script>
     </head>
 
 <body>
-    <h1 id="headline"><b>Bianca Boykin's Page</b></h1>
-   
+
+    <section id = "Navigation">
+        <button class = "navButton" onclick="scrollToSection('Home')">Home</button>
+        <button class = "navButton" onclick="scrollToSection('About')">About</button>
+        <button class = "navButton" onclick="scrollToSection('Experience')">Experience</button>
+        <button class = "navButton" onclick="scrollToSection('Connect')">Connect</button>
+    </section>
+
+    <section id="Home"><h1>Bianca Boykin's Page</h1></section>
+
     <section id = "About">
         <h3>About</h3>
         <img src="Bianca Boykin Headshot.jpg" width="140" height="200">
@@ -25,16 +34,16 @@
     <section id = "Experience">
         <h3>Experience</h3>
         <p>Currently learning:<dl>
-            <dt>Python</dt>
+            <dd>Python</dd>
             <dd>Javascript</dd>
             <dd>HTML</dd>
             <dd>CSS</dd>
         </dl></p>
     </section>
 
-    <section id="skills">
+    <section id = "Skills">
         <h2>Skills</h2>
-        <ul></ul>
+        <dl id = "skillsList"></dl>
     </section>
     
     <section>
@@ -65,9 +74,10 @@
             <ul></ul>
         </section>
 
+        <section id = "Test">Adding some space so I can see how my button navigation buttons act</section>
+
 
     <footer id="footer"> </footer>
-    <script src="js/index.js"></script>
 </body>
 
 </html>
