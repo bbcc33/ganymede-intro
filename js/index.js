@@ -7,11 +7,11 @@ copyright.innerHTML = "Bianca " + thisYear;
 footer.appendChild(copyright);
 
 let skills = ["video editing", "videography"];
-let skillsSection = document.getElementById("skills");
-let skillsList = skillsSection.querySelector("ul");
+let skillsSection = document.getElementById("Skills");
+let skillsList = skillsSection.querySelector("skillsList");
 
 for (let i = 0; i < skills.length; i++) {
-    let skill = document.createElement("li");
+    let skill = document.createElement("dd");
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 };
@@ -49,7 +49,11 @@ messageForm.addEventListener("submit", function(event) {
     messageForm.reset();
 });
 
-
-
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({behavior: 'smooth' });
+    }
+}
 
 

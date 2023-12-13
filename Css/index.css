@@ -4,7 +4,6 @@ body {
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     border: 2px solid white;
     padding: 30px;
-    margin: 50px;
 }
     
 h1 {
@@ -18,18 +17,19 @@ p {
 h2 {
     color: white;
     font-size: 25px;
-    font-weight: normal;
+    font-weight: lighter;
 }
 h3 {
     color: white;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: lighter;
 }
-#skills ul {
+#Skills dl {
     display: list-item;
     list-style-type: "📷";
     padding-inline-start: 10px;
 }
+
 dd {
     display: list-item;
     list-style-type: "🎉";
@@ -47,9 +47,12 @@ label {
 }
 #Experience {
     border-block-style: dotted;
+    margin: 10px;
 }
-#skills {
+#Skills {
+    color:white;
     border-block-style: groove;
+    margin: 10px;
 }
 Label {
     font-size: 12px;
@@ -81,4 +84,9 @@ Form {
 Footer {
     border-spacing: 6px;
     background-color: darkslategray;
+}
+#Navigation {
+    display: inline-block;
+    position: fixed;
+    top: 0;
 }
