@@ -5,11 +5,11 @@
     justify-content: space-around;
 }
 #Navigation {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 1000px;
+    /* display: fixed ; */
+    /* position: fixed; */
+    /* top: 0; */
+    /* left: 0; */
+    width: 100px;
     background: black;
     padding: 0px;
     justify-content: space-around;
@@ -51,7 +51,19 @@ form {
     display: inline;
     position: center;
 }
-/* #Test {
-    display: flex;
-    position: 2000px;
-} */
+#Navigation {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 
+
+}
+header {
+    grid-area: header;
+}
+@media (minn-width: 768px) {
+    body {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 100px minmax(150px, auto) 100px;
+    }
+}

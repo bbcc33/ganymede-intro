@@ -90,3 +90,8 @@ Footer {
     position: fixed;
     top: 0;
 }
+video, audio {
+    margin: 0 auto;
+    display: block;
+}
+
