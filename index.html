@@ -9,10 +9,10 @@
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0" alt="Me, Bianca">
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/flexbox.css">
-        <script src="js/index.js"></script>
     </head>
 
 <body>
+    <main>
 
     <section id = "Navigation">
         <button class = "navButton" onclick="scrollToSection('Home')">Home</button>
@@ -21,11 +21,15 @@
         <button class = "navButton" onclick="scrollToSection('Connect')">Connect</button>
     </section>
 
+
+
     <section id="Home"><h1>Bianca Boykin's Page</h1></section>
 
     <section id = "About">
         <h3>About</h3>
-        <img src="Bianca Boykin Headshot.jpg" width="140" height="200">
+        <img src="img/Bianca Boykin Headshot.jpg" alt="a picture of me" title="Me" width="140" height="200">
+        <!-- if this image was in another html file like article.html I would source the image with:
+        <img src="../../img/Bianca Boykin Headshot.jpg"> -->
         <pre>I'm an aspiring software engineer 
     teaching myself some programming languages 
         and hoping to get better every day. </pre>
@@ -44,6 +48,11 @@
     <section id = "Skills">
         <h2>Skills</h2>
         <dl id = "skillsList"></dl>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul></ul>
     </section>
     
     <section>
@@ -76,8 +85,21 @@
 
         <section id = "Test">Adding some space so I can see how my button navigation buttons act</section>
 
+        <section>
+            <h3>Here's a video I made of my time in Arkansas:</h3>
+            <div class="wrapper">
+                <video controls>
+                    <source src="video/Arkansas.mp4" type="video/mp4" controls>
+                    <!-- <source src="video/Arkansas.ogg" type="video/ogg" controls /> ogg for different video players -->
+                </video>
+            </div>
 
-    <footer id="footer"> </footer>
+        </section>
+    </main>
+
+   
+    <footer id="footer"><p>You can email me @ <a href="mailto:biancanboykin@gmail.com?subject="Hello%20There">biancanboykin@gmail.com</a></p></footer>
+    <script type="text/javascript src="js/index.js"></script>
 </body>
 
 </html>

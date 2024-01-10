@@ -1,59 +1,85 @@
-const today = new Date();
-const thisYear = today.getFullYear();
-const footer = document.querySelector("#footer");
-const copyright = document.createElement("p");
-copyright.innerHTML = "Bianca " + thisYear;
+document.addEventListener("DOMContentLoaded", () => {
+// this allows for my script tag to be placed anywhere in the html code
+    const today = new Date();
+    const thisYear = today.getFullYear();
+    const footer = document.querySelector("#footer");
+    const copyright = document.createElement("p");
+    copyright.innerHTML = "Bianca " + thisYear;
 
-footer.appendChild(copyright);
+    footer.appendChild(copyright);
 
-let skills = ["video editing", "videography"];
-let skillsSection = document.getElementById("Skills");
-let skillsList = skillsSection.querySelector("skillsList");
+    let skills = ["video editing", "videography"];
+    let skillsSection = document.getElementById("Skills");
+    let skillsList = skillsSection.querySelector("skillsList");
 
-for (let i = 0; i < skills.length; i++) {
-    let skill = document.createElement("dd");
-    skill.innerText = skills[i];
-    skillsList.appendChild(skill);
-};
+    for (let i = 0; i < skills.length; i++) {
+        let skill = document.createElement("dd");
+        skill.innerText = skills[i];
+        skillsList.appendChild(skill);
+    };
 
-let messageForm = document.forms["leave_message"];
-messageForm.addEventListener("submit", function(event) {
-    event.preventDefault();
+    let messageForm = document.forms["leave_message"];
+    messageForm.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    let userName = event.target.usersName.value;
-    let userEmail = event.target.usersEmail.value;
-    let userMessage = event.target.usersMessage.value;
+        let userName = event.target.usersName.value;
+        let userEmail = event.target.usersEmail.value;
+        let userMessage = event.target.usersMessage.value;
 
-    console.log("Name: " + userName);
-    console.log("Email: " + userEmail);
-    console.log("Message: " + userMessage);
+        console.log("Name: " + userName);
+        console.log("Email: " + userEmail);
+        console.log("Message: " + userMessage);
 
-    let messageSection = document.getElementById("messages");
-    let messageList = messageSection.querySelector("ul");
-    let newMessage = document.createElement("li");
+        let messageSection = document.getElementById("messages");
+        let messageList = messageSection.querySelector("ul");
+        let newMessage = document.createElement("li");
 
-    newMessage.innerHTML = 
-    `<a href='mailto:${userEmail}'>${userName} </a>` +
-    `<span> wrote: ${userMessage}</span>`;
+        newMessage.innerHTML = 
+        `<a href='mailto:${userEmail}'>${userName} </a>` +
+        `<span> wrote: ${userMessage}</span>`;
 
-        let removeButton = document.createElement("button");
-        removeButton.innerText = "Remove";
-        removeButton.addEventListener("click", function() {
-            let entry = removeButton.parentNode;
-            entry.remove();
-        });
+            let removeButton = document.createElement("button");
+            removeButton.innerText = "Remove";
+            removeButton.addEventListener("click", function() {
+                let entry = removeButton.parentNode;
+                entry.remove();
+            });
 
-        newMessage.appendChild(removeButton);
-        messageList.appendChild(newMessage);
+            newMessage.appendChild(removeButton);
+            messageList.appendChild(newMessage);
 
-    messageForm.reset();
+        messageForm.reset();
+    });
+
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({behavior: 'smooth' });
+        }
+    }
 });
 
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({behavior: 'smooth' });
+const githubRequest = new XMLHttpRequest();
+githubRequest.open('GET', 'https://api.github.com/users/bbcc33/repos');
+githubRequest.send();
+
+githubRequest.addEventListener('load', function(event) {
+    if(githubRequest.status === 200) {
+        const repositories = JSON.parse(this.responseText);
+        console.log(repositories);
+
+        const projectSection = document.getElementById('projects');
+        const projectList = projectSection.querySelector('ul');
+
+        for (let i = 0; i < repositories.length; i++) {
+            const project = document.createElement('li');
+            project.innerText = repositories[i].name;
+            projectList.appendChild(project);
+};
+    } else {
+        console.error('Error fetching repositories. Status:', githubRequest.status);
     }
-}
+});
+
 
 
