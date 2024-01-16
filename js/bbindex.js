@@ -5,17 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const footer = document.querySelector("#footer");
     const copyright = document.createElement("p");
     copyright.innerHTML = "Bianca " + thisYear;
-
     footer.appendChild(copyright);
 
     let skills = ["video editing", "videography"];
     let skillsSection = document.getElementById("Skills");
-    let skillsList = skillsSection.querySelector("skillsList");
+    let listSkills = skillsSection.querySelector("dl");
 
     for (let i = 0; i < skills.length; i++) {
         let skill = document.createElement("dd");
         skill.innerText = skills[i];
-        skillsList.appendChild(skill);
+        listSkills.appendChild(skill);
     };
 
     let messageForm = document.forms["leave_message"];
@@ -50,21 +49,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
         messageForm.reset();
     });
-
-    function scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({behavior: 'smooth' });
-        }
-    }
 });
 
+function scrollToSection(sectionId) {
+    let section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({behavior: 'smooth' });
+    }
+}
+
+
 const githubRequest = new XMLHttpRequest();
+githubRequest.onreadystatechange = function () {
+    if (githubRequest.readyState === 4) {
+        
+    }
+};
+githubRequest.onerror = function () {
+    console.error('Error fetching repositories.');
+};
+
 githubRequest.open('GET', 'https://api.github.com/users/bbcc33/repos');
 githubRequest.send();
 
 githubRequest.addEventListener('load', function(event) {
-    if(githubRequest.status === 200) {
+    if (githubRequest.status === 200) {
         const repositories = JSON.parse(this.responseText);
         console.log(repositories);
 
@@ -75,7 +84,7 @@ githubRequest.addEventListener('load', function(event) {
             const project = document.createElement('li');
             project.innerText = repositories[i].name;
             projectList.appendChild(project);
-};
+        }
     } else {
         console.error('Error fetching repositories. Status:', githubRequest.status);
     }
