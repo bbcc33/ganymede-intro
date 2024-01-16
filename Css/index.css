@@ -20,20 +20,17 @@ h2 {
     font-weight: lighter;
 }
 h3 {
-    color: white;
+    color: #ffffff;
     font-size: 25px;
     font-weight: lighter;
 }
-#Skills dl {
-    display: list-item;
-    list-style-type: "📷";
-    padding-inline-start: 10px;
+dt::before {
+    content: "📷";
+    margin-right: 5px;
 }
-
-dd {
-    display: list-item;
-    list-style-type: "🎉";
-    padding-inline-start: 1ch;
+dd::before {
+    content: "🎉";
+    margin-right: 5px;
 }
 pre {
     color: white;
@@ -85,13 +82,11 @@ Footer {
     border-spacing: 6px;
     background-color: darkslategray;
 }
-#Navigation {
-    display: inline-block;
-    position: fixed;
-    top: 0;
-}
 video, audio {
     margin: 0 auto;
     display: block;
+}
+#skillsList {
+    color: white;
 }
 
