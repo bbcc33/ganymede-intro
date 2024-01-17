@@ -58,37 +58,41 @@ function scrollToSection(sectionId) {
     }
 }
 
+function fetchData(url) {
+    return fetch(url)
+        .then(checkStatus)
+        .then(res => res.json())
+        .catch(error => console.log('Looks like there was a promlem!', error))
+}
 
-const githubRequest = new XMLHttpRequest();
-githubRequest.onreadystatechange = function () {
-    if (githubRequest.readyState === 4) {
-        
-    }
-};
-githubRequest.onerror = function () {
-    console.error('Error fetching repositories.');
-};
+Promise.all([
+    fetchData('https://api.github.com/users/bbcc33/repos')
+])
+.then(([repositories]) => {
+    updateRepositories(repositories);
+})
+.catch(error => console.log('Error fetching repositories:', error));
 
-githubRequest.open('GET', 'https://api.github.com/users/bbcc33/repos');
-githubRequest.send();
 
-githubRequest.addEventListener('load', function(event) {
-    if (githubRequest.status === 200) {
-        const repositories = JSON.parse(this.responseText);
-        console.log(repositories);
-
-        const projectSection = document.getElementById('projects');
-        const projectList = projectSection.querySelector('ul');
-
-        for (let i = 0; i < repositories.length; i++) {
-            const project = document.createElement('li');
-            project.innerText = repositories[i].name;
-            projectList.appendChild(project);
-        }
+function checkStatus(response) {
+    if (response.ok) {
+        return Promise.resolve(response);
     } else {
-        console.error('Error fetching repositories. Status:', githubRequest.status);
+        return Promise.reject(new Error(response.statusText));
     }
-});
+}
 
+function updateRepositories(repositories) {
+    const projectSection = document.getElementById('projects'); 
+    const projectList = projectSection.querySelector('ul'); 
 
-
+    if (repositories) {
+        for (let i = 0; i < repositories.length; i++) { 
+            const project = document.createElement('li'); 
+            project.innerText = repositories[i].name; 
+            projectList.appendChild(project); 
+} 
+} else { 
+    console.error('Error fetching repositories. Status:', response.status); 
+} 
+}

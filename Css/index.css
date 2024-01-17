@@ -24,6 +24,11 @@ h3 {
     font-size: 25px;
     font-weight: lighter;
 }
+Skills dl {
+    display: list-item;
+    list-style-type: "📷";
+    padding-inline-start: 10px;
+}
 dt::before {
     content: "📷";
     margin-right: 5px;
