@@ -1,8 +1,9 @@
-
-
 #Experience dl {
     display: flex;
     justify-content: space-around;
+}
+#Music {
+ display: grid;   
 }
 #Navigation {
     display: flex;
@@ -14,6 +15,34 @@
     padding: 0px;
     justify-content: space-around;
     height: 5vh;
+}
+#Connect {
+    display: flex;
+    flex-direction: vertical;
+}
+#ABOUT {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+#ABOUT img {
+    margin-right: 20px;
+}
+.wrapper {
+    display:flow-root;
+}
+.wrapper2 {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+#Skills {
+    display: grid;
+    grid-column-gap: 1px;
+    grid-gap: 0px;
+}
+.iframe {
+    margin-left: 10px;
 }
 .navButton {
     color: bisque;
@@ -27,7 +56,27 @@
 .navButton:active {
     background-color: gray;
 }
-@media screen and (max-width: 600px) {
+.navButton {
+    margin-right: 5px;
+    flex: 0 1 auto;
+    }
+form {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; not a good look */
+    grid-row-gap: 10px;
+    grid-gap: 10px;
+}
+label {
+    padding: 0px;
+}
+#Submit {
+    display: inline;
+    position: center;
+}
+header {
+    grid-area: header;
+}
+@media screen and (max-width: 300px) {
     body {
         padding: 10px;
     }
@@ -38,25 +87,8 @@
     flex-direction: row;
     align-items: center;
 }
-.navButton {
-    margin-right: 5px;
-    flex: 0 1 auto;
-    }
 }
-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 10px;
-}
-#Submit {
-    display: inline;
-    position: center;
-}
-
-header {
-    grid-area: header;
-}
-@media (minn-width: 768px) {
+@media (min-width: 768px) {
     body {
         grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows: 100px minmax(150px, auto) 100px;
