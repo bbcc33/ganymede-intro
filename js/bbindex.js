@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const thisYear = today.getFullYear();
     const footer = document.querySelector("#footer");
     const copyright = document.createElement("p");
-    copyright.innerHTML = "Bianca " + thisYear;
+    copyright.innerHTML = "© Bianca " + thisYear;
     footer.appendChild(copyright);
     
 
