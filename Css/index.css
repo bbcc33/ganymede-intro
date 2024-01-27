@@ -1,11 +1,15 @@
 body {
+    background-image: url("/Users/aoi/Desktop/Bianca/CDT/ganymede-intro/img/20231230_141749.jpg");
     background-color: black;
     color: white;
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    border: 2px solid white;
-    padding: 30px;
+    border: 5px solid white;
+    padding: 15px;
+    width: 100%;
+    max-width: 1500px;
+    box-sizing: border-box;
+    background-size:contain;
 }
-    
 h1 {
     color: white;
     font-size: 40px;
@@ -24,32 +28,15 @@ h3 {
     font-size: 25px;
     font-weight: lighter;
 }
-dt::before {
-    content: "📷";
-    margin-right: 5px;
-}
-dd::before {
-    content: "🎉";
-    margin-right: 5px;
-}
 pre {
     color: white;
 }
 label {
     color: white;
 }
-#About {
-    border-block-style: groove;
-    writing-mode: horizontal-tb;
-}
-#Experience {
+.wrapper {
     border-block-style: dotted;
-    margin: 10px;
-}
-#Skills {
-    color:white;
-    border-block-style: groove;
-    margin: 10px;
+    bottom: 0px;
 }
 Label {
     font-size: 12px;
@@ -73,20 +60,33 @@ Form {
     background: grey;
     border: bisque;
 }
-#messages ul {
-    display: list-item;
-    list-style-type: "💥";
-    padding-inline-start: 1ch;
-}
 Footer {
     border-spacing: 6px;
     background-color: darkslategray;
 }
-video, audio {
+video {
     margin: 0 auto;
     display: block;
 }
-#skillsList {
-    color: white;
+li {
+    list-style-type: none;
 }
+/* .line {
+    border-top: 1px dotted white line;
+} */
 
+/* Definition Lists */
+/* #messages dl {
+    display: list-item;
+    list-style-type: "💥";
+    padding-inline-start: 1ch;
+} */
+/* dd::before {
+    content: "🎉";
+    margin-right: 5px;
+} */
+/* #Skills {
+    color:white;
+    border-block-style: groove;
+    margin: 10px;
+} */
